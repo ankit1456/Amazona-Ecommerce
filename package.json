@@ -1,15 +1,26 @@
 {
   "name": "amazona",
   "version": "1.0.0",
-  "description": "full stack ecommerce application",
+  "description": "Amazona ecommerce application",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "build": "cd frontend && npm install && npm run build",
+    "start:dev": "nodemon --watch backend --exec node --experimental-modules backend/server.js --ignore './frontend/' "
   },
   "author": "ankit tripathi",
   "license": "ISC",
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
+  },
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.13.8"
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.9",
+    "validator": "^13.6.0"
   }
 }

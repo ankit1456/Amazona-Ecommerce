@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Ankit Tripathi",
+    "email": "ankittripathi1456@gmail.com",
+    "isAdmin": true,
+    "password": "test1234"
+  },
+  {
+    "name": "Leo Smith",
+    "email": "leo@example.com",
+    "isAdmin": false,
+    "password": "test1234"
+  },
+  {
+    "name": "John Smith",
+    "email": "john@example.com",
+    "isAdmin": false,
+    "password": "test1234"
+  }
+]

@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./components/Header";
+import HomeScreen from "./screens/HomeScreen";
+import ProductScreen from "./screens/ProductScreen";
+import CartScreen from "./screens/CartScreen";
+import SigninScreen from "./screens/SigninScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+import ShippingAddressScreen from "./screens/ShippingAddressScreen";
+import PaymentMethodScreen from "./screens/PaymentMethodScreen";
+import PlaceorderScreen from "./screens/PlaceorderScreen";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='grid-container'>
+        <Header />
+        <main>
+          <Route path='/product/:id'>
+            <ProductScreen />
+          </Route>
+          <Route path='/cart/:productId?'>
+            <CartScreen />
+          </Route>
+          <Route path='/signin'>
+            <SigninScreen />
+          </Route>
+          <Route path='/register'>
+            <RegisterScreen />
+          </Route>
+          <Route path='/shipping'>
+            <ShippingAddressScreen />
+          </Route>
+          <Route path='/paymentMethod'>
+            <PaymentMethodScreen />
+          </Route>
+          <Route path='/placeorder'>
+            <PlaceorderScreen />
+          </Route>
+          <Route exact path='/'>
+            <HomeScreen />
+          </Route>
+        </main>
+        <footer className='row center'>All right reserved &copy; 2021</footer>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
